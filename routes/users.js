@@ -1,3 +1,4 @@
+//routing for category
 var key;
 const router = require('express').Router();
 let User = require('../models/user.model');
@@ -28,7 +29,7 @@ router.route('/:id').get((req,res) => {
         .catch(err => res.status(400).json('Error: '+err));
 });
 
-router.route('/:id').delete((req,res) => {
+router.route('/:id').delete((req,res) => {  //deleting both category and it's documents
     
     User.findById(req.params.id)
     .then(users => (
